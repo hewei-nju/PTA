@@ -1,5 +1,43 @@
 #include <bits/stdc++.h>
 using namespace std;
+void Print()
+{
+    vector<int> list;
+    int data, cnt = 0, pos = 0;
+    while (cin >> data, data != -1) {
+        list.push_back(data);
+    }
+    if (list.empty()) {
+        cout << "NULL" << endl;
+        return;
+    }
+    while (cin >> data, data != -1) {
+        while (pos <= list.size() -1 && data > list[pos]) {
+            pos += 1;
+        }
+        if (data == list[pos]) {
+            pos += 1;
+            if (cnt == 0) {
+                cout << data;
+            } else {
+                cout << " " << data;
+            }
+            cnt += 1;
+        }
+    }
+    if (cnt == 0) {
+        cout << "NULL" << endl;
+    }
+}
+int main()
+{
+    Print();
+    return 0;
+}
+
+
+/*#include <bits/stdc++.h>
+using namespace std;
 struct Node {
     int data;
     struct Node *next;
@@ -76,4 +114,4 @@ void Print(List L)
         cnt += 1;
         L = L->next;
     }
-}
+}*/
