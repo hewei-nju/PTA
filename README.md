@@ -11,3 +11,11 @@ Additionally, I have created a QQ group to exchange learning algorithms or data 
 QQ group:959634096
 
 Email_Addres:191250044@smail.nju.edu.cn
+
+
+
+
+
+#### Phone Call Madman
+
+这题需要注意的点是：当只有一个人通话次数最多时，并列人数为1
