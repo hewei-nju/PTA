@@ -42,7 +42,7 @@ int main()
             } else if (start && isalnum(ch)) {
                 curStr += tolower(ch);
                 blankEnd = false;
-            } else if (start && ch == ' ') {
+            } else if (start) {
                 if (!blankEnd && curStr.length() > 0) {
                     curStr += ' ';
                     blankEnd = true;
@@ -53,7 +53,7 @@ int main()
             }
             if (end && curStr != forStr) {
                 if (blankEnd) {
-                    curStr = curStr.substr(0, curStr.length());
+                    curStr = curStr.substr(0, curStr.length() - 1);
                 }
                 end = false;
                 auto search = HashMap.find(curStr);
@@ -61,7 +61,7 @@ int main()
                     search->second += 1;
                 } else {
                     HashMap.insert(make_pair(curStr, 1));
-                };
+                }
                 forStr = curStr;
                 curStr = "";
             }
@@ -87,13 +87,10 @@ int main()
         }
         ++ begin;
     }
-    if (nums == 0) {
-        cout << res << endl;
-        cout << cnt << endl;
-    } else {
-        cout << res << endl;
-        cout << cnt << endl;
-        cout << "And " << nums << " more ..." << endl;
+    cout << res << endl;
+    cout << cnt << endl;
+    if (nums != 0) {
+        cout << "And " << nums << " more ...";
     }
     return 0;
 }
